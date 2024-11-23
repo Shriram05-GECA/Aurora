@@ -1,6 +1,7 @@
+/* Global styling */
 body {
   margin: 0;
-  background: #0b1e34; /* Night sky color */
+  background: #020b2e; /* Dark night sky */
   overflow: hidden;
   height: 100vh;
   display: flex;
@@ -12,39 +13,53 @@ body {
   position: relative;
   width: 100%;
   height: 100%;
+  overflow: hidden;
 }
 
 .light {
   position: absolute;
-  width: 400px;
-  height: 600px;
-  background: linear-gradient(45deg, rgba(0, 255, 255, 0.5), rgba(255, 0, 255, 0.5));
-  filter: blur(100px);
-  animation: moveLight 6s infinite alternate ease-in-out;
+  width: 120%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(0, 255, 255, 0.1), rgba(255, 0, 255, 0.03));
+  animation: flow 10s infinite ease-in-out;
+  filter: blur(150px);
 }
 
-.light:nth-child(1) {
-  top: 20%;
-  left: 15%;
+/* Light 1 */
+.light1 {
+  top: -50%;
+  left: -30%;
+  background: linear-gradient(120deg, rgba(0, 255, 255, 0.4), rgba(0, 0, 255, 0.1));
+  animation-duration: 12s;
 }
 
-.light:nth-child(2) {
-  top: 50%;
-  left: 40%;
-  animation-delay: 1s;
+/* Light 2 */
+.light2 {
+  top: -70%;
+  left: 20%;
+  background: linear-gradient(60deg, rgba(255, 0, 255, 0.3), rgba(0, 255, 0, 0.1));
+  animation-duration: 14s;
+  animation-delay: 3s;
 }
 
-.light:nth-child(3) {
-  top: 30%;
-  left: 70%;
-  animation-delay: 2s;
+/* Light 3 */
+.light3 {
+  top: -40%;
+  left: -10%;
+  background: linear-gradient(90deg, rgba(0, 255, 127, 0.3), rgba(255, 255, 0, 0.1));
+  animation-duration: 16s;
+  animation-delay: 6s;
 }
 
-@keyframes moveLight {
+/* Keyframes for flowing animation */
+@keyframes flow {
   0% {
-    transform: translateY(0px) translateX(0px) scale(1);
+    transform: translateY(0) translateX(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(20px) translateX(-10px) rotate(10deg);
   }
   100% {
-    transform: translateY(-50px) translateX(50px) scale(1.2);
+    transform: translateY(0) translateX(10px) rotate(-10deg);
   }
 }
