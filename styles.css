@@ -1,0 +1,50 @@
+body {
+  margin: 0;
+  background: #0b1e34; /* Night sky color */
+  overflow: hidden;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.aurora {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.light {
+  position: absolute;
+  width: 400px;
+  height: 600px;
+  background: linear-gradient(45deg, rgba(0, 255, 255, 0.5), rgba(255, 0, 255, 0.5));
+  filter: blur(100px);
+  animation: moveLight 6s infinite alternate ease-in-out;
+}
+
+.light:nth-child(1) {
+  top: 20%;
+  left: 15%;
+}
+
+.light:nth-child(2) {
+  top: 50%;
+  left: 40%;
+  animation-delay: 1s;
+}
+
+.light:nth-child(3) {
+  top: 30%;
+  left: 70%;
+  animation-delay: 2s;
+}
+
+@keyframes moveLight {
+  0% {
+    transform: translateY(0px) translateX(0px) scale(1);
+  }
+  100% {
+    transform: translateY(-50px) translateX(50px) scale(1.2);
+  }
+}
